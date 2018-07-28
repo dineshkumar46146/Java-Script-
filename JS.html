@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Tabel</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+<div>
+	<script type='text/javascript'>
+var num = prompt("Enter Number", "0") //prompt user to enter the number
+ 
+var num = parseInt(num); //parse the num to number
+var i = 0;
+ 
+document.write('<table border="1" cellspacing="0">');
+for(i=1;i<10;i++) {
+    document.write("<tr><td>" + num + " x " + i + " = " + num*i + "</td></tr>");
+}
+ 
+document.write("</table>");
+</script>
+</div>
+</body>
+</html>`
