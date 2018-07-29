@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.clock{
+			display:flex;
+		}
+		#hour{
+			border:  3px solid #fff;
+			background-color: violet;
+			font-size: 150px;
+			width: 180px;
+			text-align: center;
+		}
+		#minute{
+			border:  3px solid #fff;
+			background-color: #853766;
+			font-size: 150px;
+			width: 180px;
+			text-align: center;
+
+		}
+		#second{
+			border:  3px solid #fff;
+			background-color: #748574;
+			font-size: 150px;
+			width: 180px;
+			text-align: center;
+
+		}
+	</style>
+</head>
+<body>
+	<p>please use comma sepatare multiple numbers</p>
+<input type="text" name="javascript" id="data">
+<button onclick="generate()">generate</button><br><br>
+<input type="date" name="javascript" id="date1" value="1996-02-14" >
+<button onclick="getday()">get day</button><br><br>
+<p id="bdayMsg"></p>
+
+<div class="clock">
+	<div id="hour"></div>
+	<div id="minute"></div>
+	<div id="second"></div>
+</div>
+<script type="text/javascript">
+	function generate(){
+		var data = document.getElementById("data").value;
+		console.log(data);
+		var numArray = data.split(',');
+		console.log(numArray);
+		document.write('<table border="1" cellspacing="0">');
+		for(var i=1;i<=10;i++) {
+    		document.write("<tr>");
+    		for(var j=0; j<numArray.length; j++) {
+    			document.write("<td>" + numArray[j] + " x " + i + " = " + numArray[j]*i + "</td>");
+			}
+    		document.write("</tr>");
+		}
+		document.write("</table>");
+	}
+	function getday(){
+
+		var date = document.getElementById("date1").value;
+		console.log(date);
+		date = new Date(date);
+		console.log(date);
+		var weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		var day = date.getDay();
+		console.log(day);
+		console.log("You were born on " + weekDays[day] + ".");
+		document.getElementById("bdayMsg").innerHTML = "You were born on " + weekDays[day] + "." ;
+	}
+</script>
+<script type="text/javascript">
+	var timerId = setInterval(() =>{
+		var now = new Date();
+		var h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
+		document.getElementById("hour").innerHTML = h;
+		document.getElementById("minute").innerHTML = m;
+		document.getElementById("second").innerHTML = s;
+	},1000);
+</script>
+<script type="text/javascript">
+	
+</script>
+</body>
+</html>
