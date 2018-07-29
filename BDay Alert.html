@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BDay Alret</title>
+</head>
+<body>
+	<p id="time"></p>
+	<p id="time1"></p>
+	<p id="time2"></p>
+<script type="text/javascript">
+		function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+        m = 12 + m;
+    }
+    document.getElementById("time").innerHTML = age;
+    document.getElementById("time1").innerHTML = m;
+    console.log(age);
+    return age;
+    window.alert(age);
+}
+getAge('1997-08-29')
+</script>
+<script type="text/javascript">
+	
+</script>
+</body>
+</html>
